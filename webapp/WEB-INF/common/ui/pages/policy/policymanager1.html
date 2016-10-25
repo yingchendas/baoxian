@@ -1,0 +1,662 @@
+<!--
+   settime:2016.9.5
+   author:chenying
+   describe:保单管理
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>保单管理</title>
+		<link rel="stylesheet" type="text/css" href="../../../weui/dist/style/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+		.weui_cells:before{
+			border: none;
+		}
+		.weui_cells:after{
+			border: none;
+		}
+			._title{
+				padding: .5rem;
+				 display: -webkit-box;
+				 background: #FAFAFA;
+				 border: .5px solid #04BE02;
+				 border-radius: 5px;
+				 /*width: 90%;*/
+				 margin: 0 auto;
+			}
+			._title>div{
+				 -webkit-box-flex: 1 !important;
+				 text-align: center;
+				  font-size: 14px;
+				  color: #999;
+			}
+			.list_info{
+				 display: -webkit-box;
+				  background: #FAFAFA;
+				  /*margin-top: 10px;*/
+				  padding: .8rem  0;
+				  /*border-top: 1px solid red;*/
+			}
+			.list_info>div{
+				-webkit-box-flex: 1 !important;
+				 text-align: center;
+				  color: #999;
+				 font-size: 14px;
+			}
+			button{
+				border: none;
+				border: 1px solid #ccc;
+				padding: .2rem .5rem;
+				border-radius: 5px;
+				
+			}
+			
+			.btnBox{
+				padding-bottom: 5px;
+			}
+			.Nowpage{
+				margin: 0 10px;
+			}
+			.box{
+				display: none;
+			}
+			.transformRotate{
+				-webkit-transform:rotate(180deg);
+			    transform:rotate(180deg);
+			    transition-duration:.5s, .5s, .5s;
+			}
+			.preBtn{
+				color: #fff;
+				background: #04BE02;
+				border: 1px solid #04BE02;
+			}
+		</style>
+	</head>
+	<body id="bodyBox">
+		<div class="container">
+			<div class="weui_cells weui_cells_access">
+				<a class="weui_cell" href="javascript:void(0)">
+					<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>生效的保单</p>
+					</div>
+					<div class="iconfont icon-xiajiantou c_666"></div>
+				</a>
+				<div class="box">
+					<div class="_title">
+						<!--<div>
+							类型
+						</div>-->
+						<div>
+							车牌号
+						</div>
+						<div>
+							时间
+						</div>
+						<div>
+							金额
+						</div>
+						<div>
+							状态
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555.00</span><span>元</span>
+						</div>
+						<div>
+							<p>已生效</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>已生效</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>已生效</p>
+							
+						</div>
+					</div>
+					<div class="tc btnBox"  types="0"  style="background: #FAFAFA;">
+						<button class="preBtn">上一页</button><span class="c_666 Nowpage">1/10</span><button class="nextBtn">下一页</button>
+					</div>
+					
+				</div>
+				<a class="weui_cell" href="javascript:void(0)">
+					<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>待系统处理的保单</p>
+					</div>
+					<div class="iconfont icon-xiajiantou c_666"></div>
+				</a>
+				<div class="box">
+					<div class="_title">
+						<!--<div>
+							类型
+						</div>-->
+						<div>
+							车牌号
+						</div>
+						<div>
+							时间
+						</div>
+						<div>
+							金额
+						</div>
+						<div>
+							状态
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555.00</span><span>元</span>
+						</div>
+						<div>
+							<p>处理中...</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p class="c_c22">作废</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>处理中...</p>
+							
+						</div>
+					</div>
+					<div class="tc btnBox"  types="1"  style="background: #FAFAFA;">
+						<button class="preBtn">上一页</button><span class="c_666 Nowpage">1/10</span><button class="nextBtn">下一页</button>
+					</div>
+					
+				</div>
+				<a class="weui_cell" href="javascript:void(0)">
+					<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>待支付</p>
+					</div>
+					<div class="iconfont icon-xiajiantou c_666"></div>
+				</a>
+				<div class="box">
+					<div class="_title">
+						<!--<div>
+							类型
+						</div>-->
+						<div>
+							车牌号
+						</div>
+						<div>
+							时间
+						</div>
+						<div>
+							金额
+						</div>
+						<div>
+							状态
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555.00</span><span>元</span>
+						</div>
+						<div>
+							<a href="javascript:void(0)" class="weui_btn weui_btn_mini weui_btn_primary">去支付</a> 
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<a href="javascript:void(0)" class="weui_btn weui_btn_mini weui_btn_primary">去支付</a> 
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<a href="javascript:void(0)" class="weui_btn weui_btn_mini weui_btn_primary">去支付</a> 
+							
+						</div>
+					</div>
+					<div class="tc btnBox"  types="2"  style="background: #FAFAFA;">
+						<button class="preBtn">上一页</button><span class="c_666 Nowpage">1/10</span><button class="nextBtn">下一页</button>
+					</div>
+					
+				</div>
+				<a class="weui_cell" href="javascript:void(0)">
+					<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>已支付</p>
+					</div>
+					<div class="iconfont icon-xiajiantou c_666"></div>
+				</a>
+				<div class="box">
+					<div class="_title">
+						<!--<div>
+							类型
+						</div>-->
+						<div>
+							车牌号
+						</div>
+						<div>
+							时间
+						</div>
+						<div>
+							金额
+						</div>
+						<div>
+							状态
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555.00</span><span>元</span>
+						</div>
+						<div>
+							<a href="javascript:void(0)" class="weui_btn weui_btn_mini weui_btn_primary">上传资料</a> 
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>等待出单</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>等待出单</p>
+							
+						</div>
+					</div>
+					<div class="tc btnBox"  types="3"  style="background: #FAFAFA;">
+						<button class="preBtn">上一页</button><span class="c_666 Nowpage">1/10</span><button class="nextBtn">下一页</button>
+					</div>
+					
+				</div>
+				<a class="weui_cell" href="javascript:void(0)">
+					<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>已失效</p>
+					</div>
+					<div class="iconfont icon-xiajiantou c_666"></div>
+					
+				</a>
+				<div class="box">
+					<div class="_title">
+						<!--<div>
+							类型
+						</div>-->
+						<div>
+							车牌号
+						</div>
+						<div>
+							时间
+						</div>
+						<div>
+							金额
+						</div>
+						<div>
+							状态
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555.00</span><span>元</span>
+						</div>
+						<div>
+							<p>超时过期</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>超时过期</p>
+							
+						</div>
+					</div>
+					<div class="list_info">
+						<!--<div>
+							车险
+						</div>-->
+						<div>
+							川A12345
+						</div>
+						<div>
+							2015-09-23
+						</div>
+						<div>
+							<span class="c_ff7">25555</span><span>元</span>
+						</div>
+						<div>
+							<p>退单</p>
+							
+						</div>
+					</div>
+					<div class="tc btnBox" types="4" style="background: #FAFAFA;">
+						<button class="preBtn">上一页</button><span class="c_666 Nowpage">1/10</span><button class="nextBtn">下一页</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+		<script type="text/javascript" src="../../js/touch.js"></script>
+		<script type="text/javascript" src="../../js/lib/global.js"></script>
+		<script>
+		var noWpage=1,noWpage1=1,noWpage2=1,noWpage3=1,noWpage4=1;//noWpage0：生效的保单；noWpage1：待系统处理的保单noWpage2：待支付noWpage3：已支付noWpage4：已失效
+		var totalPage = 10;//总页数
+			$(function(){
+				/*展开保单详情*/
+				var openFalg =1
+				$(".weui_cell").tap(function(){
+					var item = $(this);
+//					
+					$(".weui_cell").removeClass("open")
+					item.addClass("open");
+//				
+	      			
+	      			
+	      			
+	      			for(var i=0;i<$(".box").length;i++){
+	      				if($(".box").eq(i).prev().hasClass("open")){
+	      					item.next().toggle();
+	      					item.find('.iconfont').toggleClass("transformRotate");
+	      				}else{
+	      					$(".box").eq(i).hide();
+	      					$(".box").eq(i).prev().find('.iconfont').removeClass("transformRotate");
+	      				}
+	      					
+	      			}
+				})
+				
+				/*打开保单详情*/
+				$(".list_info").tap(function(){
+					window.location.href="policy_info.html"
+				})
+				/*翻页上一页*/
+				$('.preBtn').tap(function(){
+					var item = $(this);
+					var flag = item.parent().attr("types");
+					var Nowpage = item.next();//页面显示
+					console.log(flag)
+					switch(flag){
+						case "0":
+						if(noWpage<=1){
+							Global.tool.toast("已经是第一页啦!");
+							noWpage=1;
+						}else{
+							noWpage-=1;
+							renderFunction(noWpage,flag,Nowpage);
+						};
+						
+						break;
+						case "1": 
+						if(noWpage1<=1){
+							Global.tool.toast("已经是第一页啦!");
+							noWpage1=1;
+						}else{
+							noWpage1-=1;
+							renderFunction(noWpage1,flag,Nowpage);
+						}; 
+						break;
+						case "2":
+						if(noWpage2<=1){
+							Global.tool.toast("已经是第一页啦!");
+							noWpage2=1;
+						}else{
+							noWpage2-=1;
+							renderFunction(noWpage2,flag,Nowpage);
+						};
+						break;
+						case "3":
+						if(noWpage3<=1){
+							Global.tool.toast("已经是第一页啦!");
+							noWpage3=1;
+						}else{
+							noWpage3-=1;
+							renderFunction(noWpage3,flag,Nowpage);
+						};
+						break;
+						case "4":;
+						if(noWpage4<=1){
+							Global.tool.toast("已经是第一页啦!");
+							noWpage4=1;
+						}else{
+							noWpage4-=1
+							renderFunction(noWpage4,flag,Nowpage);
+						};
+						break;
+					}
+				});
+				/*翻页下一页*/
+				$('.nextBtn').tap(function(){
+					var item = $(this);
+					var flag = item.parent().attr("types");//0=生效的保单；1：待系统处理的保单2：待支付3：已支付4：已失效
+					var Nowpage = item.prev();//页面显示
+					console.log(flag)
+					switch(flag){
+						case "0":
+						if(noWpage>=totalPage){
+							Global.tool.toast("已经是最后一页啦!");
+							noWpage=totalPage;
+						}else{
+							noWpage+=1;
+							renderFunction(noWpage,flag,Nowpage);
+						};
+						
+						break;
+						case "1": 
+						if(noWpage1>=totalPage){
+							Global.tool.toast("已经是最后一页啦!");
+							noWpage1=totalPage;
+						}else{
+							noWpage1+=1;
+							renderFunction(noWpage1,flag,Nowpage);
+						}; 
+						break;
+						case "2":
+						if(noWpage2>=totalPage){
+							Global.tool.toast("已经是最后一页啦!");
+							noWpage2=totalPage;
+						}else{
+							noWpage2+=1;
+							renderFunction(noWpage2,flag,Nowpage);
+						};
+						break;
+						case "3":
+						if(noWpage3>=totalPage){
+							Global.tool.toast("已经是最后一页啦!");
+							noWpage3=totalPage;
+						}else{
+							noWpage3+=1;
+							renderFunction(noWpage3,flag,Nowpage);
+						};
+						break;
+						case "4":;
+						if(noWpage4>=totalPage){
+							Global.tool.toast("已经是最后一页啦!");
+							noWpage4=totalPage;
+						}else{
+							noWpage4+=1
+							renderFunction(noWpage4,flag,Nowpage);
+						};
+						break;
+					}
+				})
+				
+			})
+			/*渲染函数*/
+			function renderFunction(noWpage,flag,Nowpage){
+				/*数据请求成功后改变页数*/
+				Nowpage.text(""+noWpage+"/"+totalPage+"");
+				//打开保单详情
+				$(".list_info").tap(function(){
+					window.location.href = "policy_info.html"
+				})
+			}
+			
+		</script>
+	</body>
+</html>

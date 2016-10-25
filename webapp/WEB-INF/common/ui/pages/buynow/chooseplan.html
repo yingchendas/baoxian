@@ -1,0 +1,337 @@
+<!--
+   settime:2016.8.19
+   author:chenying
+   describe:选择投保方案
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>选择投保方案</title>
+		<link rel="stylesheet" type="text/css" href="../../../weui/dist/style/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			.container{
+				
+				/*margin: 1rem auto;*/
+				 padding:1rem 0rem;
+			}
+			.busi_policy{
+				margin-top: 20px;
+			}
+			.notice{
+				margin-right: 15px;
+				color: #04BE02;
+				/*border: 1px solid #04BE02;*/
+				font-size: 12px;
+				padding: .3rem;
+				border-radius: 2px;
+			}
+			.active{
+				color: #04BE02;
+				border-bottom: 1px solid #04BE02;
+			}
+			.money{
+				width: 80px;
+			}
+			
+			/*新增*/
+			.xubao_info{
+				display: none;
+			}
+			/*.btn_title{
+				margin: 10px 0;
+			}*/
+			.weui_input{
+				color: #000 !important;
+			}
+			.weui_label{
+				font-size: 13px;
+				
+			}
+			.xubao_info .weui_cell:before{
+				border: none;
+			}
+			.xubao_info .weui_cell_hd{
+				width: 70%;
+			}
+			.weui_input{
+				font-size: 13px;
+			}
+			.xubao_info .weui_input{
+				
+				font-size: 13px;
+				text-align: right;
+			}
+			.xubao_info .weui_cell{
+				border-bottom: .5px dashed #04BE02;
+				padding: .2rem .5rem;
+			}
+			icon-icon-question{
+        		color:#999 !important;
+        }
+		</style>
+	</head>
+	<body id="bodybox">
+			<div >
+				<h5 class="c_666 c_04b" style="padding: .5rem;">车主信息</h5>
+			</div>
+			<div class="weui_cells weui_cells_form" style="margin-top: 0px;">
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车主名称</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input " disabled="disabled" id="user_name" type="text"  value="*影" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车型名称</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" disabled="disabled" id="idNumber" type="text"  value="标志408" />
+					</div>
+				</div>	
+			</div>
+		<div class="pr btn_title" >
+			<h5 class="c_999 f15" style="padding: .5rem;">续保信息:</h5>
+			<p  class=" pa c_04b" style="right: 8px; top:12px;"><span class="f14 ">展开查看更多</span><i class="iconfont icon-xiajiantou  c_666"></i></p>
+			
+		</div>
+		<!--续保信息-->
+		<div class="xubao_info" >
+			
+		
+			
+			<div class="clearfix car_title">
+				<h5 class="c_666 fl c_04b" style="padding: .5rem;">往年保险信息</h5>
+				<!--<h5 class="c_666 fr eg_show c_04b">在哪里查看车辆信息</h5>-->
+			</div>
+			<div class="weui_cells weui_cells_form" style="margin-top: 0;">
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">保险公司:</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input " id="carNumber" type="text" disabled="disabled"  value="平安保险" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">商业险保单号:</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="classNumber" disabled="disabled" type="text"  value="12345667****3333" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">交强险保单号:</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="discernNumber" type="text" disabled="disabled"  value="12344***565" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">商业险总保费:</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="powerNumber" type="text" disabled="disabled"  value="￥3167.5" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">交强险总保费:</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="powerNumber" type="text" disabled="disabled"  value="￥316.5" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">保险生效日期（商业险）:</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="powerNumber" type="text" disabled="disabled"  value="2015-09-22" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">保险生截止日期(商业险):</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="powerNumber" type="text" disabled="disabled"  value="2016-09-22" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">保险生效日期(交强险):</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="powerNumber" type="text" disabled="disabled"  value="2015-09-22" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">保险生截止日期(交强险):</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="powerNumber" type="text" disabled="disabled"  value="2016-09-22" />
+					</div>
+				</div>
+			</div>
+			<div class="clearfix car_title">
+				<h5 class="c_666 fl c_04b" style="padding: .5rem;">投保信息</h5>
+				<!--<h5 class="c_666 fr eg_show c_04b">在哪里查看车辆信息</h5>-->
+			</div>
+			<div class="weui_cells weui_cells_form" style="margin-top: 0;">
+				
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">起保日期(商业险):</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="busdate" type="date"  placeholder="请选择" />
+						<div class="weui_cell_ft">sd</div>
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">起保日期(交强险):</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="jiaoDate" type="date"  placeholder="请选择" />
+						<div class="weui_cell_ft">sd</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<header>
+			<div class="bd" style="height: 100%;">
+				<div class="weui_tab">
+					<div class="weui_navbar">
+						<div class="weui_navbar_item active">
+							高端型
+						</div>
+						<div class="weui_navbar_item">
+							热销型
+						</div>
+						<div class="weui_navbar_item">
+							基础型
+						</div>
+						<div class="weui_navbar_item">
+							自选
+						</div>
+						<div class="weui_navbar_item">
+							续保
+						</div>
+					</div>
+					<div class="weui_tab_bd">
+	
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container bd">
+			
+			<!--交强险-->
+			<div class="clearfix bg_f" style="padding: 1rem .5rem;">
+				<p class="fl c_666 question">交强险<i class="iconfont icon-icon-question f18 c_04b "></i></p>
+				<span class="c_04b fr">投保</span>
+			</div>
+			<div class="clearfix bg_f" style="padding: .5rem;margin-top: 10px;">
+				<p class="fl c_666 question" style="margin-top: 8px;">车船税<i class="iconfont icon-icon-question f18 c_04b "></i></p>
+				<div class="c_04b fr" >
+					<div class="weui_cell weui_cell_select pr">
+		                <select class="weui_select c_04b" name="select1">
+		                    <option selected="" value="1">减税</option>
+		                    <option value="2">交税</option>
+		                    <option value="3">免税</option>
+		                     <option value="3">完税</option>
+		                      <option value="3">不交税</option>
+		                </select>
+		                <span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
+		        	</div>
+				</div>
+			</div>
+			<!--商业险-->
+			<div class="busi_policy">
+				<h4 class="c_666 bg_f" style="padding: .5rem;">商业险:</h4>
+				<div class="weui_cells" style="margin-top: 0px;">
+					<div class="weui_cell">
+						<div class="weui_cell_bd weui_cell_primary">
+							<p class="question">机动车损失险<i class="iconfont icon-icon-question f18 c_04b"></i></p>
+						</div>
+						<div class="weui_cell_ft notice">不计免赔</div>
+						<div class="weui_cell_ft c_ff7 c_04b money">5000万</div>
+					</div>
+					<div class="weui_cell">
+						<div class="weui_cell_bd weui_cell_primary">
+							<p class="question">机动车损失险 <i class="iconfont icon-icon-question f18 c_04b "></i></p>
+						</div>
+						<div class="weui_cell_ft notice">不计免赔</div>
+						<div class="weui_cell_ft c_ff7 c_04b money">100万</div>
+					</div>
+					<div class="weui_cell">
+						<div class="weui_cell_bd weui_cell_primary">
+							<p class="question">机动车损失险<i class="iconfont icon-icon-question f18 c_04b "></i></p>
+						</div>
+						<div class="weui_cell_ft notice">不计免赔</div>
+						<div class="weui_cell_ft c_ff7 c_04b money">10万</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="tc" style="margin: 20px auto 50px auto;">
+			<a href="changeplan.html" class="weui_btn weui_btn_plain_primary f14" style="width: 40%;">修改投保方案</a>
+		</div>
+		<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 999;height: 50px;">
+			<div class="weui_tab_bd">
+
+			</div>
+			<div class="weui_tabbar">
+				<a href="choosecompany.html" id="rec_btn" class="weui_btn  weui_btn_primary" style="width: 100%;padding: 5px;">选择</a>
+			</div>
+		</footer>
+		<!--<div class="tc" style="margin-top: 20px;">
+			<a href="choosecompany.html" class="weui_btn  weui_btn_primary" style="width: 90%;">选择</a>
+		</div>	-->
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/lib/global.js"></script>
+	<script>
+	/*自定义数组方法*/
+	Array.prototype.S=String.fromCharCode(2);
+	Array.prototype.in_array=function(e){
+	    var r=new RegExp(this.S+e+this.S);
+	    return (r.test(this.S+this.join(this.S)+this.S));
+	};
+	 
+	var arr = [ "xml", "html", "css", "js" ];
+	
+		/*选择类型*/
+		$(function(){
+			$("#busdate").val("2016-09-22")
+			$("#jiaoDate").val("2016-09-22")
+			/*打开保险详情*/
+			$(".question").tap(function(){
+				var title = $(this).text();
+				Global.tool.alert(title,"交强险");
+				/*关闭弹框*/
+				$(".sure").tap(function(){
+					setTimeout(function(){
+						$(".weui_dialog_alert").remove();
+					},500)
+					
+				})
+			})
+			$(".weui_navbar_item").tap(function(){
+				var item = $(this);
+				item.addClass("active");
+				item.siblings().removeClass("active");
+			})
+			
+			/*打开关闭续保信息*/
+			var openFlag=1
+			$(".btn_title").tap(function(){
+				var item = $(this);
+				
+				if(openFlag==1){
+					
+					item.find("i").removeClass("icon-xiajiantou");
+					item.find("i").addClass("icon-shangjiantou");
+					item.find("span").text("收起");
+					$(".xubao_info").show();
+					openFlag =0;
+				}else{
+					
+					item.find("i").removeClass("icon-shangjiantou");
+					item.find("i").addClass("icon-xiajiantou");
+					item.find("span").text("展开查看更多");
+					$(".xubao_info").hide();
+					openFlag=1;
+				}
+			})
+		})
+	</script>
+</html>

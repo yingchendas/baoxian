@@ -1,0 +1,139 @@
+<!--
+   settime:2016.8.30
+   author:chenying
+   describe:识别失败
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>出错啦</title>
+		<link rel="stylesheet" href="../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<style type="text/css">
+			.weui_cells_form{
+				padding: 10px;
+				background: #fff;
+				width: 88%;
+				margin: 20px auto;
+				border: 3px dashed #04BE02;
+				border-color: red blue red blue;
+				border-radius: 10px;
+			}
+			.weui_cells_form .weui_cell:before{
+				border: none;
+			}
+			     border: none;
+        }
+        .weui_cells_form .weui_cell{
+				font-size: 15px;
+			}
+			.weui_cells_form .weui_cell .weui_cell_hd{
+				color:#999;
+			}
+			.weui_cells_form .weui_cell input{
+				font-size: 14px;
+			}
+			/*新增*/
+			.get_btn{
+            display: inline-block;
+            right: 0px;
+            top:-5px;
+            font-size: 12px;
+            color: #fff;
+            background: #04BE02;
+            /*padding: .5rem;*/
+            border: none;
+            height: 35px;
+            width: 80px;
+            padding: 3px;
+            z-index: 998;
+        }
+		</style>
+	</head>
+	<body id="bodybox">
+		<div class="container bd">
+			<header>
+				<div class="weui_msg">
+				   <div class="weui_icon_area"><i class="weui_icon_warn weui_icon_msg c_04b"></i></div>
+				   <div class="weui_text_area">
+				       <p class="weui_msg_desc">尊敬的<span class="c_ff7">张三</span>,很抱歉无法查询您的爱车<span class="c_ff7">川A1235</span>的相关信息,请按以下方式录入车辆信息。</p>
+				        <p class="weui_msg_desc">尊敬的<span class="c_ff7">张三</span>,您的爱车<span class="c_ff7">川A1235</span>保险还未到投保,上年保险截止日期90日内，可投第二年保险。请于<span class="c_ff7 ">2016年12月16日</span>后购买你下一年保险，感谢您的关注！ </p>
+				   		<p class="weui_msg_desc">尊敬的<span class="c_ff7">张三</span>,您的爱车<span class="c_ff7">川A1235</span>可能未在续保有效期内（上年保险截至日期90日内，可投保第二年保险）无法进行续保报价，请核实。</p>
+				   </div>
+				   <!--新增-->
+			        <div class="weui_cell" style="background: #fff;padding:auto	 0;">
+			            <div class="weui_cell_hd"><label class="weui_label f15">手机号</label></div>
+			            <div class="weui_cell_bd weui_cell_primary pr">
+			                <input class="weui_input f14 _focus" id="phoneNum" type="number"   placeholder="请输入电话号码"/>
+			                <button  class="get_btn get pa">提交</button>
+			            </div>
+			        </div>
+				</div>
+				<div class="weui_cells weui_cells_access">
+					<a class="weui_cell" href="takephoto.html">
+						<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+						<div class="weui_cell_bd weui_cell_primary">
+							<p>修改车牌和车主姓名</p>
+						</div>
+						<div class="weui_cell_ft"></div>
+					</a>
+					<a class="weui_cell" href="buynow/changeplan.html">
+						<!--<div class="weui_cell_hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>-->
+						<div class="weui_cell_bd weui_cell_primary">
+							<p class="c_04b">信息无误,继续报价</p>
+						</div>
+						<div class="weui_cell_ft"></div>
+					</a>
+				</div>
+			</header>
+			
+			<!--查询成功-->
+			<div class=" weui_cells_form"  >
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车主姓名</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" disabled="disabled"  type="text"  placeholder="张三" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车主身份证号</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input"  type="text" disabled="disabled"  placeholder="5110231111123212323" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车牌号</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="text" disabled="disabled"  placeholder="川A1232" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车辆品牌型号</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="text" disabled="disabled"  placeholder="梅塞得-奔驰BJ6453-121" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">车辆车架号</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input"  type="text" disabled="disabled"  placeholder="LGSSDS232324232" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">发动机号码</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input"  type="text" disabled="disabled"  placeholder="LGssdsd11213" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">注册日期</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input"  type="text" disabled="disabled"  placeholder="2016-08-23" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

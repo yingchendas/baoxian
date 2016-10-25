@@ -1,0 +1,67 @@
+<!--
+   settime:2016.8.25
+   author:chenying
+   describe:经销商认证
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<title>经销商认证</title>
+		<style type="text/css">
+			.notice{
+				background: rgba(0,0,0,.3);
+				width: 90%;
+				margin: 10px auto;
+				border-radius: 5px;
+				text-align: center;
+				padding: .5rem;
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="bodybox">
+		<!--正在审核中-->
+		<h5 class="notice c_c22"> 认证审核中，请稍后！处理时效为1个工作日，节假日顺延</h5>
+		<!--已审核通过-->
+		<div class="weui_cells weui_cells_form">
+	        <div class="weui_cell">
+	            <div class="weui_cell_hd"><label class="weui_label">认证状态</label></div>
+	            <div class="weui_cell_bd weui_cell_primary pr">
+	                <input class="weui_input" id="bsu_num" disabled="disabled" type="text"   placeholder="成功"/>
+	               
+	            </div>
+	        </div>
+	        
+	    </div>
+	    <div class="weui_cells weui_cells_form">
+	        <div class="weui_cell">
+	            <div class="weui_cell_hd"><label class="weui_label">经销商</label></div>
+	            <div class="weui_cell_bd weui_cell_primary pr">
+	                <input class="weui_input" id="bsu_num" disabled="disabled" type="text"   placeholder="车享家渠道认证商家"/>
+	               
+	            </div>
+	        </div>
+	        <div class="weui_cell">
+	            <div class="weui_cell_hd"><label class="weui_label">门店信息</label></div>
+	            <div class="weui_cell_bd weui_cell_primary pr">
+	                <input class="weui_input" id="bsu_num" disabled="disabled" type="text"   placeholder="清水河快修门店"/>
+	               
+	            </div>
+	        </div>
+	        <div class="weui_cell">
+	            <div class="weui_cell_hd"><label class="weui_label">绑定手机</label></div>
+	            <div class="weui_cell_bd weui_cell_primary pr">
+	                <input class="weui_input" id="bsu_num" disabled="disabled" type="text"   placeholder="1332090902"/>
+	               
+	            </div>
+	        </div>
+	    </div>
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<!--<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/lib/global.js"></script>-->
+</html>

@@ -1,0 +1,144 @@
+<!--
+   settime:2016.8.16
+   author:chenying
+   describe:构建首页
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>首页</title>
+		<meta http-equiv="refresh"> 
+		<link rel="stylesheet" href="../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<style type="text/css">
+			.container{
+				margin-bottom: 50px;
+			}
+			.oneKey img{
+				width: 60px;
+				height: 60px;
+				left: 18px;
+				top: -28px;
+				
+			}
+			.weui_tabbar:before{
+				border: none !important;
+			}
+			.weui_tabbar_item{
+				padding: 3px 0 0;
+			}
+			
+			
+			.weui_cell:before{
+				border: none;
+			}
+			.weui_cell:after{
+				border: none;
+			}
+			.weui_cells:before{
+				border: none;
+				
+			}
+			.weui_cells:after{
+				border: none;
+				
+			}
+			/*轮播样式*/
+			.focus{ width:100%;max-height: 425px;   margin:0 auto; position:relative; overflow:hidden;   }
+			.focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:15px; text-align:center;  }
+			.focus .hd ul{ display:inline-block; height:5px; padding:3px 5px; background-color:rgba(255,255,255,0.7); 
+				-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; font-size:0; vertical-align:top;
+			}
+			.focus .hd ul li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#8C8C8C; margin:0 5px;  vertical-align:top; overflow:hidden;   }
+			.focus .hd ul .on{ background:#FE6C9C;  }
+		
+			.focus .bd{ position:relative; z-index:0; }
+			.focus .bd li img{ width:100%;max-height: 100%; }
+			.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+		</style>
+	</head>
+	<body id="bodybox">
+		<div class="container">
+			<header class="banner">
+				<div id="focus" class="focus">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul>
+						<li><a href="javascript:void(0)"><img src="../images/pic1.png" /></a></li>
+						<li><a href="javascript:void(0)"><img src="../images/pic2.png" /></a></li>
+						<li><a href="javascript:void(0)"><img src="../images/pic3.png" /></a></li>	
+					</ul>
+				</div>
+			</div>
+				<!--<img src="../images/haibao.png" width="100%" alt="" />-->
+			</header>
+			<div class="listShow" >
+				<img src="../images/liucheng.png" width="100%" />
+			</div>
+			<div class="index_list">
+				<div class="weui_cells weui_cells_access " style="margin-top: -10px;background:#f8f8f8;" >
+					<a class="weui_cell" href="javascript:void(0)">
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<img src="../images/reduce.png" alt="" width="100%"  />
+							
+						</div>
+						
+					</a>
+					<a class="weui_cell" href="javascript:void(0)">
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<img src="../images/info.png" width="100%"/>
+							
+						</div>
+						
+					</a>
+					
+				</div>
+			</div>
+		</div>
+		<!--footer-->
+		<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 999;height: 50px;">
+			
+			<div class="weui_tabbar bg_f ">
+				<a href="service.html" class="weui_tabbar_item ">
+					<div class="weui_tabbar_icon pr" >
+						<img src="../images/service.png" width="40px"/>
+					</div>
+					<p class="weui_tabbar_label">理赔服务</p>
+				</a>
+				<a href="takephoto.html" class="weui_tabbar_item  oneKey">
+					<div style="width: 100px; margin: 0 auto;" class="pr">
+						<img src="../images/index.png" class="pa" alt="" width="60px" />
+						<p class="weui_tabbar_label f14 pa " style="top: 30px;font-size: 13px;left: 23px;">一键报价</p>
+					</div>
+					
+					
+				</a>
+				<a href="mycenter.html" class="weui_tabbar_item" >
+					<div class="weui_tabbar_icon pr">
+						<img src="../images/center.png" width="40px" alt="" />
+					</div>
+					<p class="weui_tabbar_label tc">个人中心</p>
+				</a>
+			</div>
+		</footer>
+		<script type="text/javascript" src="../js/lib/mui.js"></script>
+		<script src="../js/lib/TouchSlide.1.1.js"></script>
+		<script>
+			/*轮播*/
+			TouchSlide({ 
+					slideCell:"#focus",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd ul", 
+					effect:"leftLoop", 
+					autoPlay:true,//自动播放
+					autoPage:true, //自动分页
+					
+				});
+		</script>
+	</body>
+	
+</html>

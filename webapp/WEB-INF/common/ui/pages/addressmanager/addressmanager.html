@@ -1,0 +1,147 @@
+<!--
+   settime:2016.8.17
+   author:chenying
+   describe:地址管理
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>地址管理</title>
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			body{
+				background: #f8f8f8;
+			}
+			.addr_info{
+				width: 97%;
+				margin: 0 .5%;
+				padding: .2rem 0;
+				margin-top: 10px;
+			}
+			.addr_tittle ,.addr_info p{
+				padding:.2rem .5rem;
+			}
+			.active{
+				border: 2px solid #04BE02;
+			}
+			.addr_info_body{
+				width: 100%;
+			}
+			.editClass{
+				width: 90% !important;margin-left: -125px;
+			}
+			.edit_box{
+				width: 100px;
+				/*display: none;*/
+				right: -20px;
+				top: 40px;
+			}
+			.editBtn .delBtn{
+				font-size: 6rem;
+			}
+			.btn{
+				margin-top: 20px;
+			}
+			.btn a{
+				border-radius: 10px;
+				margin-left: 10%;
+			}
+			.icon-gou1{
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body id="bodybox">
+		<div class="bd container">
+			<div class="addr_info bg_f  clearfix pr">
+				<div class="fl addr_info_body" style="width:63%;">
+					<div class="addr_tittle clearfix">
+						<h5 class="name fl f16 c_666">张先生<span class="addr_status c_c22 f12 ">(默认地址)</span></h5>
+
+					</div>
+					<p class="c_999 f15">
+						四川省成都市金牛区北站东二段17号
+					</p>
+				</div>
+				<div class="edit_box fr tc"style="width: 30%;margin-right: 2%;">
+					<span class="editBtn iconfont icon-bianji c_04b f2m " ></span>
+					<span class="delBtn iconfont icon-shanchu c_ff7 f2m " ></span>
+					
+				</div>
+				<span class="iconfont icon-gou1 c_04b f2m pa" style="bottom: -11px;right: 0;"></span>
+			</div>
+			
+			<div class="addr_info bg_f  clearfix pr">
+				<div class="fl addr_info_body" >
+					<div class="addr_tittle clearfix">
+						<h5 class="name fl f16 c_666">张先生</h5>
+						<!--<span class="addr_status c_c22 fr">默认地址</span>-->
+					</div>
+					<p class="c_999">
+						四川省成都市金牛区北站东二段17号
+					</p>
+				</div>
+				<div class="pa edit_box" >
+					<span class="editBtn c_04b iconfont icon-bianji f2m"></span>
+					<span class="delBtn iconfont c_ff7 icon-shanchu f2m" style="margin-left: 15%;"></span>
+				</div>
+				<span class="iconfont icon-gou1 c_04b f2m pa" style="bottom: -11px;right: 0;"></span>
+			</div>
+		</div>
+		<div style="margin-top: 20px;">
+			<a href="javascript:void(0)" id="rec_btn" class="weui_btn  weui_btn_primary" style="width: 95%;padding: .2rem 0;">添加地址</a>
+		</div>
+		<!--<div class="clearfix tc btn" style="width: 100%;">
+			<!--<a href="javascript:void(0)"id="edit" class="tc dinline  fl bg_primary c_fff " style="width: 30%;padding: .6rem;">编辑</a>-->
+			<!--<a href="add_addr.html" class="tc dinline bg_primary c_fff " style="width:70%;padding: .6rem;">添加</a>
+		</div>-->
+		
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script >
+		$(function(){
+			/*默认事件*/
+//			$(".icon-gou1").eq(0).css("display","block");
+			//编辑按钮事件
+//			$("#edit").tap(function(){
+//				var item = $(this);
+//				if(item.text()=="编辑"){
+////					$(".addr_info_body").addClass("editClass");
+//					$(".edit_box").show();
+//					item.text("完成");
+//				}else{
+////					$(".addr_info_body").removeClass("editClass");
+//					$(".edit_box").hide();
+//					item.text("编辑");
+//				}
+//				
+//			})
+			
+			/*选中事件*/
+//			$(".addr_info").tap(function(){
+//				var item = $(this);
+//				item.addClass("active");
+//				item.find(".icon-gou1").show();
+//				item.siblings().removeClass("active");
+//				item.siblings().find(".icon-gou1").hide();
+//			});
+			
+			/*确认编辑*/
+			$(".editBtn").tap(function(){
+				window.location.href="add_addr.html";
+			})
+			
+			/*删除地址*/
+			$(".delBtn").tap(function(){
+				$(this).parent().parent().remove();
+				//todo 删除数据库数据
+				
+			})
+		})
+	</script>
+</html>

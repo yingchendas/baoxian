@@ -1,0 +1,364 @@
+<!--
+   settime:2016.8.19
+   author:chenying
+   describe:修改投保方案
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>选择方案</title>
+		<link rel="stylesheet" type="text/css" href="../../../weui/dist/style/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			/*.notice{
+				margin-right: 5px;
+			}*/
+			.notice{
+				margin-right: 5px;
+				color: #04BE02;
+				border: 1px solid #04BE02;
+				font-size: 12px;
+				padding: .3rem;
+				border-radius: 2px;
+				display: none;
+			}
+			.introduce{
+				padding: 1rem;
+				border-top: 0.5px solid #CECECE;
+				display: none;
+			}
+			.list{
+				border-bottom: 1px solid #CECECE;
+			}
+			/*新增*/
+			.stu-to{
+				/*border-radius: 10px !important;
+				border: 1px solid red;*/
+			}
+			.stu-to>span{
+				padding: .3rem;
+				background: #ccc;
+				color: #fff;
+				/*border-radius: 10px !important;*/ 
+			}
+			.active{
+				background: #04BE02 !important;
+				/*box-shadow: 5px -3px #04BE02 !important;*/
+			}
+			/*开关按钮*/
+			.weui_switch {
+  -webkit-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 78px;
+  height: 32px;
+  border: 1px solid #f8f8f8;
+  outline: 0;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: #F8F8F8;
+}
+.weui_switch:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ccc;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.weui_switch:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.weui_switch:checked {
+  border-color: #04BE02;
+  background-color: #04BE02;
+}
+.weui_switch:checked:before {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.weui_switch:checked:after {
+  -webkit-transform: translateX(48px);
+          transform: translateX(48px);
+}
+.tou_info{
+	top: 8px;
+	left: 35px;
+}
+
+select {
+
+direction: rtl;
+
+}
+.icon-icon-question{
+        		color:#999 !important;
+        }
+		</style>
+	</head>
+	<body id="bodybox">
+		
+		<div class="container bd">
+			
+			<!--交强险-->
+			<div class="clearfix bg_f" style="padding: 1rem 1rem;">
+				<p class="fl c_666 question"><span class="policyName">交强险</span> <i class="iconfont icon-icon-question f18 c_04b"></i></p>
+				<span class="c_04b fr">投保</span>
+			</div>
+			<div class="clearfix bg_f" style="padding: .5rem;margin-top: 10px;">
+				<p class="fl c_666 question" style="margin-top: 8px;"><span class="policyName">车船税</span><i class="iconfont icon-icon-question f18 c_04b "></i></p>
+				<div class="c_04b fr" >
+					<div class="weui_cell weui_cell_select pr">
+		                <select class="weui_select c_04b" name="select1">
+		                    <option selected="" value="1">减税</option>
+		                    <option value="2">交税</option>
+		                    <option value="3">免税</option>
+		                     <option value="3">完税</option>
+		                      <option value="3">不交税</option>
+		                </select>
+		                <span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
+		        	</div>
+				</div>
+			</div>
+			<!--商业险-->
+			<div class="busi_policy">
+				<h4 class="c_666" style="padding: .5rem;">商业险:</h4>
+				<div class="weui_cells" style="margin-top: 0px;">
+					<div class="list">
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary" >
+								<p class="question"><span style="display: inline-block;width: 90px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">机动车损失险 sdsdsdssd</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+							</div>
+							<div class="weui_cell_bd notice">
+								不计免赔
+								<!--<div class=" weui_cells_checkbox">
+									<label class="weui_cell weui_check_label" for="s11" style="padding: 15px;">
+							            <div class="weui_cell_hd">
+							                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
+							                <i class="weui_icon_checked"></i>
+							            </div>
+							            <div class="weui_cell_bd weui_cell_primary">
+							                <p class="c_04b">不计免赔</p>
+							            </div>
+							        </label>
+								</div>-->
+							</div>
+							<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
+								<div style="width: 80px;" class="pr">
+									<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox"/>
+									<span class="pa f12 tou_info c_fff" style="">不投保</span>
+								</div>
+								 
+								<!--<div class="stu-to">
+									<span class="active">投保</span><span>不投</span>
+								</div>-->
+								 	
+							        <!--<div class="weui_cell weui_cell_select pr" style="text-align: right;">
+							                <select class="weui_select c_04b tr" style="text-align: right;"  name="select1">
+							                    <option  value="1">1000000万</option>
+							                    <option selected="" value="2">100</option>
+							                    <option value="3">5</option>
+							                </select>
+							                <span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
+							        </div>-->
+							</div>
+						</div>
+					</div>
+					<div class="list">
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p class="question"><span class="policyName">机动车损失险</span><span>￥12334</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+							</div>
+							<div class="weui_cell_bd notice">
+								不计免赔
+								<!--<div class=" weui_cells_checkbox">
+									<label class="weui_cell weui_check_label" for="s11" style="padding: 15px;">
+							            <div class="weui_cell_hd">
+							                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
+							                <i class="weui_icon_checked"></i>
+							            </div>
+							            <div class="weui_cell_bd weui_cell_primary">
+							                <p class="c_04b">不计免赔</p>
+							            </div>
+							        </label>
+								</div>-->
+							</div>
+							<div class="weui_cell_ft c_04b" style="padding: .5rem">
+								 
+							        <div class="weui_cell weui_cell_select pr" style="">
+							                <select class="weui_select c_04b" name="select1">
+							                    <option selected="" style="text-align: right;border: 1px solid red;" value="-1">无</option>
+							                    <option value="2">10000000</option>
+							                    <option value="3">Email</option>
+							                </select>
+							                <span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
+							        </div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="list">
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>机动车损失险</p>
+							</div>
+							<div class="weui_cell_bd notice">
+								<div class=" weui_cells_checkbox">
+									<label class="weui_cell weui_check_label" for="s11" style="padding: 15px;">
+							            <div class="weui_cell_hd">
+							                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
+							                <i class="weui_icon_checked"></i>
+							            </div>
+							            <div class="weui_cell_bd weui_cell_primary">
+							                <p class="c_04b">不计免赔</p>
+							            </div>
+							        </label>
+								</div>
+							</div>
+							<div class="weui_cell_ft c_04b">
+								1000万 
+								
+							</div>
+							<span class="iconfont icon-xiajiantou c_666 look"></span>
+						</div>
+						<p class="introduce">保险介绍</p>
+					</div>-->
+				</div>
+				
+			</div>
+		</div>
+		<div class=" weui_cells_checkbox">
+			<label class="weui_cell weui_check_label" for="s11" style="padding: 15px;">
+	            <div class="weui_cell_hd">
+	                <input type="checkbox" onchange="changeFuncton(this)" class="weui_check" name="checkbox1" id="s11" >
+	                <i class="weui_icon_checked"></i>
+	            </div>
+	            <div class="weui_cell_bd weui_cell_primary">
+	                <p class="c_04b">不计免赔</p>
+	            </div>
+	        </label>
+		</div>
+		<div class="tc" style="margin: 20px auto 50px auto;">
+			<a href="javascript:;" class="weui_btn weui_btn_plain_primary f14" style="width: 40%;">恢复初始方案</a>
+		</div>
+		<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 999;height: 50px;">
+			<div class="weui_tab_bd">
+
+			</div>
+			<div class="weui_tabbar">
+				<a href="choosecompany.html" class="weui_btn  weui_btn_primary" style="width: 100%;padding: 5px;">下一步</a>
+			</div>
+		</footer>	
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/lib/global.js"></script>
+	<script>
+	function changeType(item){
+		var obj = $(item);
+		if(item.checked){
+			obj.next().css({"top": "8px","left": "23px"});
+			obj.next().text("投保")
+		}else{
+			obj.next().css({"top": "8px","left": "35px"});
+			obj.next().text("不投保");
+		}
+//		alert(item.checked);
+	}
+		$(function(){
+			$('.weui_select').on('focus',function(){  
+				$(".weui_tab").removeClass("_move")
+	        }).on('blur',function(){  
+	        	$(".weui_tab").addClass("_move")
+	        });
+			/*初始化投保按钮*/
+			var checkedList = $(".weui_switch");
+			for(var i=0;i<checkedList.length;i++){
+				var item = checkedList.eq(i);
+				if(item[0].checked){
+					item.next().css({"top": "8px","left": "23px"});
+					item.next().text("投保")
+				}else{
+					item.next().css({"top": "8px","left": "35px"});
+					item.next().text("不投保");
+				}
+			}
+			
+			/**/
+//			var selectList = $(".weui_select");
+//			for(var i=0;i<selectList.length;i++){
+//				if(selectList.eq(i).val()==-1){
+//					
+//					selectList.eq(i).css("padding",0);
+//				}
+//			}
+			/*选择投保按钮*/
+			$(".stu-to>span").tap(function(){
+				item = $(this);
+				item.addClass("active");
+				item.siblings().removeClass("active");
+			})
+			/*关闭弹框*/
+	    	function closeAlert(){
+	    		$(".sure").tap(function(){
+	                setTimeout(function(){
+	                    $(".weui_dialog_alert").remove();
+	                },400)
+	
+	            })
+	    	}
+			$(".question").tap(function(){
+				var title = $(this).find(".policyName").text();
+				Global.tool.alert(title,"交强险");
+				/*关闭弹框*/
+				closeAlert();
+			})
+			
+//			//查看保险介绍
+//			var lookFlag=0;//查看介绍标志
+//			$(".look").tap(function(){
+//				if(lookFlag==0){
+//					lookFlag=1;
+//					var item = $(this);
+//					item.removeClass("icon-xiajiantou");
+//					item.addClass("icon-shangjiantou");
+//					item.parent().parent().find(".introduce").css("display","block");
+//				}else{
+//					lookFlag=0;
+//					var item = $(this);
+//					item.addClass("icon-xiajiantou");
+//					item.removeClass("icon-shangjiantou");
+//					item.parent().parent().find(".introduce").css("display","none");
+//				}
+//				
+//			})
+		})
+		function changeFuncton(item){
+			if($(item).attr("checked")){
+				$(".notice").show();
+			}else{
+				$(".notice").hide();
+			}
+				
+		}
+	</script>
+</html>

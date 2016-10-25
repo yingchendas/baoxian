@@ -1,0 +1,108 @@
+<!--
+   settime:2016.8.17
+   author:chenying
+   describe:兑换佣金
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>兑换佣金</title>
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			header{
+				padding: 1rem;
+			}
+		</style>
+	</head>
+	<body id="bodybox">
+		
+		<div class="container bd">
+			<header class="tc bg_f" >
+				<h5 class="f17 c_666">您的佣金余额为<span class="c_ff7">239.0</span>元</h5>
+				<h5 class="c_666">可提现:200元</h5>
+			</header>
+			<!--填写账号-->
+			<div class="weui_cells weui_cells_form">
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">银行卡号</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="number" id="weiAcount" placeholder="请输入银行卡号" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">银行名称</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="text" id="owerName" placeholder="请输入银行名称" />
+					</div>
+				</div>
+			</div>
+			<p class="c_ff7 f12" style="padding: 0 .5rem;">仅支发卡行:中国银行、建设银行、工商银行、农业银行、交通银行</p>
+			<!--兑换金额-->
+			<div class="weui_cells weui_cells_form">
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">兑换金额</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="number" id="ex_money" placeholder="请输入兑换金额" />
+					</div>
+				</div>
+				<div class="weui_cell weui_vcode">
+					<div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="number" id="ex_number" placeholder="请输入验证码" />
+					</div>
+					<div class="weui_cell_ft">
+						<img src="./images/vcode.jpg" />
+					</div>
+				</div>
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">交易密码</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" type="password" id="pwd" placeholder="请输入交易密码" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="c_ff7 f12" style="padding: 0 .5rem;">提现申请提交后，我们将于每月1日进行处理，如遇节假日则顺延</p>
+		<div class="btn" style="margin-top: 2rem;">
+			<a href="javascript:void(0)" class="weui_btn  weui_btn_primary" id="subtn" style="width: 80%;padding: .2rem 0;">提交兑换申请</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/lib/global.js"></script>
+	<script >
+		   /*
+		    * settime:2016.8.23
+		    * author:chenying
+		    * describe:兑换佣金
+		   */
+		  $(function(){
+		  	 /*验证输入信息,验证成功后提交数据*/
+		  	$("#subtn").tap(function(){
+		  		var weiAcount = $("#weiAcount").val();//银行卡号
+		  		var owerName = $("#owerName").val();//银行名
+		  		var ex_money = $("#ex_money").val();//兑换金额
+		  		var ex_number = $("#ex_number").val();//验证码
+		  		var pwd = $("#pwd").val();//交易密码
+		  		if(weiAcount==""){
+		  			Global.tool.toast("请输入银行卡号");
+		  		}else if(owerName ==""){
+		  			Global.tool.toast("请输入银行名");
+		  		}else if(ex_money ==""){
+		  			Global.tool.toast("请输入兑换金额");
+		  		}else if(ex_number ==""){
+		  			Global.tool.toast("请输入验证码");
+		  		}else if(pwd ==''){
+		  			Global.tool.toast("请输入交易密码");
+		  		}
+		  		else{
+		  			//验证成功后提交数据
+		  		}
+		  	})
+		  })
+
+	</script>
+</html>

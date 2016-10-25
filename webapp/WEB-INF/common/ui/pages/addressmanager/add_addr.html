@@ -1,0 +1,57 @@
+<!--
+   settime:2016.8.17
+   author:chenying
+   describe:地址编辑
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>添加或修改地址</title>
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body id="bodybox">
+		<div class="container bd">
+			<div class="weui_cells weui_cells_form">
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">收货人</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="user_name" type="text"  placeholder="请填写收货人姓名" />
+					</div>
+				</div>
+				
+				<div class="weui_cell">
+					<div class="weui_cell_hd"><label class="weui_label">收货地址</label></div>
+					<div class="weui_cell_bd weui_cell_primary">
+						<input class="weui_input" id="addr" type="text"  placeholder="请收货人地址" />
+					</div>
+				</div>
+				
+			</div>
+			<div class="weui_cells weui_cells_checkbox">
+				<label class="weui_cell weui_check_label" for="s11">
+		            <div class="weui_cell_hd">
+		                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" >
+		                <i class="weui_icon_checked"></i>
+		            </div>
+		            <div class="weui_cell_bd weui_cell_primary">
+		                <p>设置为默认地址</p>
+		            </div>
+		        </label>
+			</div>
+		</div>
+		<div class="tc" style="margin-top: 20px;">
+			<a href="javascript:void(0)" id="saveBtn" class="weui_btn  weui_btn_primary" style="width: 90%;">保存</a>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/lib/global.js"></script>
+	<script type="text/javascript" src="../../js/addressmanager/add_addr.js"></script>
+</html>

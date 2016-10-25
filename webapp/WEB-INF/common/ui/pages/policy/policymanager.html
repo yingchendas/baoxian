@@ -1,0 +1,309 @@
+<!--
+   settime:2016.8.18
+   author:chenying
+   describe:保单管理
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>保单管理</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			
+			/*begin*/
+			#sliderSegmentedControl{
+				width: 100% !important;
+				border: 1px solid red;
+				border: none;
+			}
+			
+			.title{
+				 display: -webkit-box;
+				 background: #FAFAFA;
+				/*border: 1px solid #999;*/
+			}
+			.mui-slider-item{
+				border: none !important;
+			}
+			.title .mui-control-item{
+				border: none !important;
+				display: block !important;
+				border-right: .5px solid #ccc !important;
+ 
+			    padding: 0px 0 !important;
+			 
+			    -webkit-box-flex: 1 !important;
+			}
+			.title .mui-active{
+				color: #04BE02 !important;
+				border-bottom: 1px solid #04BE02 !important;
+			}
+			.mui-table-view{
+				padding: 0 !important;
+			}
+			.mui-table-view-cell{
+				 display: -webkit-box;
+				 padding: 1rem .1rem !important;
+			}
+			.mui-table-view-cell div{
+				/*border-right: 1px solid #999 !important;*/
+ 
+			    padding: 0px 0;
+			 
+			    -webkit-box-flex: 1;
+			}
+			.discount{
+				background-color: #f8f8f8 !important;
+			}
+			.goPay{
+				display: block;
+				width: 60px;
+				border-radius:5px ;
+			}
+		</style>
+	</head>
+	<body id="bodybox">
+		
+		<!--内容-->
+		<div class="mui-content">
+			
+			<div id="slider" class="mui-slider mui-fullscreen" style="margin-top: 0;height: 98%;">
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class=" title">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							已生效
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							待支付
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							已支付
+						</a>
+						<a class="mui-control-item" href="#item4mobile">
+							已过期
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<!--已生效-->
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll" type="1">
+								<ul class="mui-table-view discount" style="	" id="templateBox">
+									<li class="mui-table-view-cell bg_f">
+										<div class="pr tc">
+											<h5	 class="c_666">车险</h5>
+											<h5 class="c_666">川A12345</h5>
+										</div>
+										<div class="tc">
+											<p>2016-08-18</p>
+										</div>
+										<div class="tc">
+											<span class="c_ff7 f18">149.0</span><span>元</span>
+											<p class="c_ff7 btn">已生效</p>
+										</div>
+									</li>
+									<li class="mui-table-view-cell bg_f">
+										<div class="pr tc">
+											<h5	 class="c_666">车险</h5>
+											<h5 class="c_666">川A12345</h5>
+										</div>
+										<div class="tc">
+											<p>2016-08-18</p>
+										</div>
+										<div class="tc">
+											<span class="c_ff7 f18">149.0</span><span>元</span>
+											<p class="c_ff7 btn">已生效</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--待支付-->
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll" type="2">
+								<ul class="mui-table-view discount">
+									<li class="mui-table-view-cell bg_f">
+										<div class="pr tc">
+											<h5	 class="c_666">车险</h5>
+											<h5 class="c_666">川A12345</h5>
+										</div>
+										<div class="tc">
+											<p>2016-08-18</p>
+										</div>
+										<div class="tc clearfix">
+											<span class="c_ff7 f18">149.0</span><span>元</span>
+											<a href="#" class="goPay bg_primary c_fff fr btn">去支付</a>     
+										</div>
+									</li>
+									<li class="mui-table-view-cell bg_f">
+										<div class="pr tc">
+											<h5	 class="c_666">车险</h5>
+											<h5 class="c_666">川A12345</h5>
+										</div>
+										<div class="tc">
+											<p>2016-08-18</p>
+										</div>
+										<div class="tc clearfix">
+											<span class="c_ff7 f18">149.0</span><span>元</span>
+											<a href="#" class="goPay bg_primary c_fff fr btn">去支付</a>     
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--已支付-->
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll" type="3">
+								<ul class="mui-table-view discount">
+									<li class="mui-table-view-cell bg_f">
+										<div class="pr tc">
+											<h5	 class="c_666">车险</h5>
+											<h5 class="c_666">川A12345</h5>
+										</div>
+										<div class="tc">
+											<p>2016-08-18</p>
+										</div>
+										<div class="tc">
+											<span class="c_ff7 f18">149.0</span><span>元</span>
+											<p class="c_ff7 btn">已支付</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--已过期-->
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll" type="4">
+								<ul class="mui-table-view discount">
+									<li class="mui-table-view-cell bg_f">
+										<div class="pr tc">
+											<h5	 class="c_666">车险</h5>
+											<h5 class="c_666">川A12345</h5>
+										</div>
+										<div class="tc">
+											<p>2016-08-18</p>
+										</div>
+										<div class="tc">
+											<span class="c_ff7 f18">149.0</span><span>元</span>
+											<p class="c_ff7 btn">已过期</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript" src="../../js/lib/mui.js"></script>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/lib/mui.pullToRefresh.js"></script>
+	<script type="text/javascript" src="../../js/lib/mui.pullToRefresh.material.js"></script>
+	<script>
+		
+		mui.init();
+		//阻尼系数
+		var deceleration = mui.os.ios ? 0.002 : 0.0008;
+		mui('.mui-scroll-wrapper').scroll({
+			bounce: false,
+			indicators: true, //是否显示滚动条
+			deceleration: deceleration
+		});
+		mui.ready(function() {
+			//循环初始化所有下拉刷新，上拉加载。
+			mui.each(document.querySelectorAll('.mui-slider-group .mui-scroll'), function(index, pullRefreshEl) {
+				mui(pullRefreshEl).pullToRefresh({
+		//			down: {
+		//				callback: function() {
+		//					var self = this;
+		//
+		//					setTimeout(function() {
+		//						var ul = self.element.querySelector('.mui-table-view');
+		//						var type = $(ul).parent().attr("type");
+		//						pullDown(ul, type, self);
+		//						self.endPullDownToRefresh();
+		//					}, 1000);
+		//				}
+		//			},
+					up: {
+						callback: function() {
+							 var self = this;
+		
+							setTimeout(function() {
+								var ul = self.element.querySelector('.mui-table-view');
+								var type = $(ul).parent().attr("type");
+								createFragment(ul, type, self);
+								self.endPullUpToRefresh();
+							}, 1000);
+						},
+						 auto: true,
+					}
+				});
+				
+				
+			});
+			
+			/*查看保险详情*/
+			$(".btn").on("click",function(){
+				window.location.href="policy_info.html"
+			})
+		
+		});
+		/*
+		 * ul==刷新内容需要添加的盒子
+		 * type==数据类型/赚取明细/兑换明细
+		 * self==刷新主体
+		 * */
+		/*上拉加载函数*/
+		var createFragment = function(ul, type, self) {
+			console.log(type);
+			switch(type) {
+				case "1":
+					self.endPullUpToRefresh(true);
+					self.endPullDownToRefresh();
+					break;
+				case "2":
+					self.endPullUpToRefresh(true);
+					self.endPullDownToRefresh();
+					break;
+				case "3":
+					self.endPullUpToRefresh(true);
+					self.endPullDownToRefresh();
+					break;	
+				case "4":
+					self.endPullUpToRefresh(true);
+					self.endPullDownToRefresh();
+					break;	
+			}
+		
+		};
+		//var pullDown = function(ul, type, self) {
+		//	$(ul).empty();
+		//	switch(type) {
+		//		case "1":
+		//			self.endPullUpToRefresh(true);
+		//			self.endPullDownToRefresh();
+		//			break;
+		//		case "2":
+		//			self.endPullUpToRefresh(true);
+		//			self.endPullDownToRefresh();
+		//			break;
+		//	}
+		//}
+	</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>sds</title>
+		<style type="text/css">
+			.bubble{
+				width: 60px;
+				height: 60px;
+				background: #ccc;
+				position: relative;
+			}
+			.transformRotate{
+				-webkit-transform:rotate(180deg);
+			    transform:rotate(180deg);
+			    transition-duration:.5s, .5s, .5s;
+			}
+			.bubble:before{content:'';position:absolute;left:100%;top:0px;width:16px;height:15px;border-width:0;border-style:solid;border-color:transparent;margin-left:-3px;border-bottom-width:8px;border-bottom-color:currentColor;border-radius:0 0 30px 0;color:#dddddd;}
+			.ceshi{
+				width: 60px;
+				height: 80px;
+				background: #ccc;
+				display: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div>
+			<button>展开</button>
+		</div>
+		<div class="ceshi">
+			ceshi
+		</div>
+		<div >
+			<button>展开</button>
+		</div>
+		<div class="ceshi">
+			ceshi 
+		</div>
+		<input type="file" name="file"  capture="camera" />
+		<div>
+			<img src="../images/eg.png" width="80px" class="nowImg" alt="" />
+			
+		</div>
+		<div class="imgBox" style="position: fixed;width: 100%;top: 0;height: 100%;top: 0;left: 0;background: rgba(0,0,0,.5);padding: 60px;display: none;" >
+			<div style="width: 60%;margin: 95px auto;position: relative;padding: 45px;">
+				<img src="" class="showImg" width="60%" alt="" style="margin-top: 45px;" />
+				<span class="_close" style="color: #fff;position: absolute;right: 5%;top: -30px;cursor: pointer;">关闭</span>
+				<button class="ss" style="color: #fff;padding: 15px;background: #ccc;font-size:50px;position: absolute;right: 5%;top: 30px;">顺时针旋转</button>
+				<button class="ns" style="color: #fff;padding: 15px;background: #ccc;font-size:50px;position: absolute;right: 5%;top: 160px;">逆时针旋转</button>
+			</div>
+			<div style="text-align: center;">
+				
+			</div>
+			
+		</div>
+	</body>
+	<script src="../js/lib/jquery-1.7.min.js"></script>
+	<script>
+		$(function(){
+			$(".nowImg").on("click",function(){
+				var item = $(this);
+				var _src = item.attr("src");
+				$(".imgBox").show();
+				$(".showImg").attr("src",_src);
+//				$(".showImg").addClass("transformRotate");
+				
+			})
+			/*顺时针旋转*/
+			var i =0
+			$(".ss").on("click",function(){
+				i+=1
+				$(".showImg").css({"-webkit-transform":"rotate("+90*i+"deg)","transform":"rotate("+90*i+"deg)"})
+			})
+			$(".ns").on("click",function(){
+				i-=1
+				$(".showImg").css({"-webkit-transform":"rotate("+90*i+"deg)","transform":"rotate("+90*i+"deg)"})
+			})
+			/*关闭*/
+			$("._close").on("click",function(){
+				$(".imgBox").hide();
+			})
+			
+			$("button").on("click",function(){
+				alert(11)
+				$(this).parent().next().toggle();
+			})
+		})
+	</script>
+</html>

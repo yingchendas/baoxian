@@ -1,0 +1,102 @@
+<!--
+   settime:2016.8.17
+   author:chenying
+   describe:赚佣金
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>赚佣金</title>
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			header{
+				background: #fff;
+				
+				 padding:.5rem 1rem;
+			}
+			
+			.userName{
+				margin-top: 20px;
+				margin-left: 5%;
+			}
+			.commission_own{
+				margin-top: 20px;
+				padding:.5rem .7rem ;
+			}
+			.commission_own>div{
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body id="bodybox">
+		<div class="container bd">
+			<div class="weui_dialog_confirm" style="display: none;">
+			   <div class="weui_mask"></div>
+			   <div class="weui_dialog">
+			       <div class="weui_dialog_hd"><strong class="weui_dialog_title">分享二维码</strong></div>
+			       <div class="weui_dialog_bd">确认分享您的专属二维码？</div>
+			       <div class="weui_dialog_ft">
+			           <a href="#" class="weui_btn_dialog default cancel">取消</a>
+			           <a href="#" class="weui_btn_dialog primary sure">确定</a>
+			       </div>
+			   </div>
+			</div>
+			<header >
+				<div class="clearfix " style="padding: 0 2rem;">
+					<img class="fl" src="../../images/zhuanye.png" width="60px" alt="用户头像" />
+					<span class="tc fl userName c_666">用户名</span>
+					<img src="../../images/dengji1.png" alt="" class="fr" width="40px" style="margin-top: 10px;"/>
+				</div>
+				<p class="c_666 f16 tc" style="margin-top: 10px;">您的佣金余额为:<span class="c_ff6 f18">239.59</span> 元</p>
+				<p class="tc c_999 f14">已提现 200元</p>
+				<p class="tc c_999 f14">已赚取佣金 200元</p>
+				<div class="bd spacing">
+					<div class="button_sp_area clearfix">
+						
+						<a href="comm_info.html" class="weui_btn  weui_btn_primary fl" style="width: 45%;margin-top: 1rem;">查明细</a>
+						<a href="exchange.html" class="weui_btn weui_btn_primary fr" style="width: 45%;">兑换</a>
+					</div>
+				</div>
+			</header>
+			<!--立即赚佣金-->
+			<div class="commission_own bg_f ">
+				<p class="c_666">通过您推荐的客户，成功购买保险服务后，您将获得每单金额7%-15%不等的推荐佣金。</p>
+				<div class="tc">
+					<a href="javascript:;" class="weui_btn weui_btn_warn earnBtn" style="width: 55%;background: #FF7F00;">立即赚佣金</a>
+				</div>
+			</div>
+			<!--推荐详情-->
+			<div class="commission_own bg_f ">
+				<p class="c_666">您目前为<span class="c_c22">1级会员</span> ，您将获得，您所推荐的2级会员/3级会员购买保险服务，所产生的佣金。(您推荐的用户为2级会员，该2级会员推荐的用户为您的3级会员，3级会员不可推荐)</p>
+				<div class="tc">
+					<a href="recommend_info.html" class="weui_btn weui_btn_primary " style="width: 55%;">查看推荐详情</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../../zepto/zepto.min.js"></script>
+	<script src="../../js/touch.js"></script>
+	<script>
+	$(function(){
+		$(".earnBtn").tap(function(){
+			$(".weui_dialog_confirm").show();
+			
+		});
+		/*取消*/
+		$(".cancel").tap(function(){
+			$(".weui_dialog_confirm").hide();
+		});
+		/*确认*/
+		$(".sure").tap(function(){
+			//跳转至分享页
+			$(".weui_dialog_confirm").hide();
+			window.location.href="qr.html"
+		})
+		
+	})
+		
+	</script>
+</html>

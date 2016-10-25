@@ -1,0 +1,545 @@
+<!--
+   settime:2016.8.19
+   author:chenying
+   describe:查看报价
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>查看报价</title>
+		<link rel="stylesheet" type="text/css" href="../../../weui/dist/style/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			ul li{
+				list-style: none;
+				padding:.5rem;
+				background: #fff;
+				margin: 10px auto 0 auto;
+				width: 87%;
+			}
+		
+			.company_name{
+				margin-top:3px;
+				margin-left: 5px;
+			}
+			.youhui{
+				padding: .3rem;
+				font-size: 12px;
+				margin-top: 0px;
+				border-radius: 5px;
+			}
+			.info{
+				margin-top: 10px;
+				 font-size: 14px;
+				
+			}
+			/*.active{
+				border: 1.3px solid #04BE02;
+				
+			}*/
+			.price{
+				margin-top: 3px;
+			}
+			/*保单详情*/
+			.cover{
+				height: 100%;
+			    width: 100%;
+			    position: fixed;
+			    left: 0;
+			    right: 0;
+			    top: 0;
+			    bottom: 0;
+			    background: rgba(0, 0, 0,0.6);
+			    overflow: hidden;
+			    z-index: 1000000;
+			   display: none;
+				
+				 
+			}
+			.scrollBox{
+				height:100%;
+			    width: 100%;
+			    position: fixed;
+			    left: 0;
+			    right: 0;
+			   top: 0;
+			    background: rgba(0, 0, 0, 0.0);
+			    overflow-y: scroll;
+			    z-index: 1000001;
+			    display: none;
+				
+			}
+			.info_title>span{
+				display: inline-block;
+				width: 33.3%;
+			}
+			
+			header{
+				padding: .5rem 1rem;
+			}
+			.cover header div{
+				width: 100%;
+			}
+			.userName,.money{
+				margin-top: 3px;
+				margin-left: 5%;
+			}
+			.coverBox,.tel,.addr{
+				width: 90%;
+				border-radius: 5px;
+				margin: 1rem auto;
+				 padding:1rem .5rem;
+			}
+			.container>div{
+				margin-top: 10px;
+			}
+			.icon-gou1{
+				display: none;
+			}
+			.notice{
+				margin-right: 20px;
+				padding: .3rem;
+			}
+			.bus_info>div{
+				width: 33.3%;
+				 font-size: 12px;
+			}
+			.weui_cell_primary{
+				font-size: 15px;
+			}
+			/*新增*/
+			footer{
+				background: rgba(0,0,0,0.5);
+			}
+			
+			
+			/*进度条*/
+
+.bar {
+  height: 40px;
+  width: 0;
+  transition: width 1.2s ease-in-out;
+  position: relative;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+@media(max-width: 350px) {
+  .bar {
+    margin: 2.5rem 0 0.5rem;
+  }
+}
+.bar.mint {
+ background-color: #eb7b59;
+  background-image: repeating-linear-gradient(-45deg, #eb7b59, #eb7b59 30px, #f09f87 30px, #f09f87 60px);
+  background-size: 600px 100%;
+  animation: barberpole 12s linear infinite;
+  border-bottom: 0.2rem solid #dd481b;
+}
+.bar.active:after, .bar.active:before {
+  opacity: 1;
+}
+.bar:before {
+  content: attr(data-skill);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  height: 40px;
+  font-style: italic;
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: opacity 2s 0.6s;
+  transition: opacity 2s 0.6s;
+}
+@media(max-width: 350px) {
+  .bar:before {
+    top: -100%;
+    color: black;
+    padding: 10px 0 0;
+  }
+}
+.bar:after {
+  /*content: attr(data-percent) "%";*/
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 2s 0.6s;
+}
+@media(max-width: 350px) {
+  .bar:after {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes barberpole {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 600px 0%;
+  }
+}
+@-moz-keyframes barberpole {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 600px 0%;
+  }
+}
+@keyframes barberpole {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 600px 0%;
+  }
+}
+.bar.active[data-percent="100"] {
+  width: 90%;
+  margin: 0 auto;
+}
+
+._barBox{
+	margin-top: .5rem;
+}
+		</style>
+	</head>
+	<body id="bodybox">
+		
+		<!--保单详情-->
+		<div class="cover nextBtn pf">
+			
+			
+		</div>
+		<div class="scrollBox ">
+			<div class="coverBox bd bg_f " >
+				<header class="clearfix tl pr">
+					
+					<div class="clearfix  fl" style="width: 60%;">
+						<img class="fl" src="../../images/pingan.jpg" width="40px" alt="logo" />
+						<span class="tc fl userName c_666">太平洋保险</span>
+					</div>
+					<p class="fr money">
+						<span>￥</span><span class="f17 c_ff7">123.55</span><span>元</span>
+					</p>
+				</header>
+				<!--交强险-->
+				<div >
+					<div class="clearfix" style="padding: .3rem 1rem;">
+						<h4 class="fl c_666">强制险</h4>
+						<span class="fr  f14" style="padding: .3rem .5rem;border-radius: 5px;">小计￥1015元</span>
+					</div>
+					<div class="weui_cells " style="margin-top: 0px;background: #f8f8f8;">
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>交强险</p>
+							</div>
+							<div class="weui_cell_ft c_666">655.0</div>
+						</div>
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>车船税</p>
+							</div>
+							
+							<div class="weui_cell_ft c_666">360.0</div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<!--商业险-->
+				<div class="busi_policy" >
+					<div class="clearfix" style="padding: .3rem 1rem;">
+						<h4 class="fl c_666">商业险</h4>
+						<span class="fr  f14" style="padding: .3rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
+					</div>
+					<div class="info_title clearfix">
+						<span class="tc fl c_04b">险种</span>
+						<span class="tc fl c_04b">保额</span>
+						<span class="tc fl c_04b">保费</span>
+					</div>
+					<div class="weui_cells" style="margin-top: 0px; background: #f8f8f8;">
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary tl">
+								<p>机动车损失险</p>
+							</div>
+							<div class="weui_cell_ft c_04b tc" >100万</div>
+							<div class="weui_cell_ft c_666 tc">876.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>三者险不计免赔</p>
+							</div>
+							<div class="weui_cell_ft c_04b" >投保</div>
+							<div class="weui_cell_ft c_666">123.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>玻璃险</p>
+							</div>
+							<div class="weui_cell_ft c_04b" >投保</div>
+							<div class="weui_cell_ft c_666">123.98</div>
+							
+						</div>
+						
+					</div>
+					<div class="tr" style="padding: 1rem;">
+						<span class="c_fff bg_ff7" style="border-radius: 5px; padding: .3rem;">加油卡,价值1000元</span>
+					</div>
+					
+					
+				</div>
+				<div class="busi_policy" >
+					<div class="clearfix" style="padding: .3rem 1rem;">
+						<h4 class="fl c_666">商业险</h4>
+						<span class="fr  f14" style="padding: .3rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
+					</div>
+					<div class="info_title clearfix">
+						<span class="tc fl c_04b">险种</span>
+						<span class="tc fl c_04b">保额</span>
+						<span class="tc fl c_04b">保费</span>
+					</div>
+					<div class="weui_cells" style="margin-top: 0px; background: #f8f8f8;">
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary tl">
+								<p>机动车损失险</p>
+							</div>
+							<div class="weui_cell_ft c_04b tc" >100万</div>
+							<div class="weui_cell_ft c_666 tc">876.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>三者险不计免赔</p>
+							</div>
+							<div class="weui_cell_ft c_04b" >投保</div>
+							<div class="weui_cell_ft c_666">123.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>玻璃险</p>
+							</div>
+							<div class="weui_cell_ft c_04b" >投保</div>
+							<div class="weui_cell_ft c_666">123.98</div>
+							
+						</div>
+						
+					</div>
+					<div class="tr" style="padding: 1rem;">
+						<span class="c_fff bg_ff7" style="border-radius: 5px; padding: .3rem;">加油卡,价值1000元</span>
+					</div>
+					
+					
+				</div>
+				<div class="busi_policy" >
+					<div class="clearfix" style="padding: .3rem 1rem;">
+						<h4 class="fl c_666">商业险</h4>
+						<span class="fr  f14" style="padding: .3rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
+					</div>
+					<div class="info_title clearfix">
+						<span class="tc fl c_04b">险种</span>
+						<span class="tc fl c_04b">保额</span>
+						<span class="tc fl c_04b">保费</span>
+					</div>
+					<div class="weui_cells" style="margin-top: 0px; background: #f8f8f8;">
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary tl">
+								<p>机动车损失险</p>
+							</div>
+							<div class="weui_cell_ft c_04b tc" >100万</div>
+							<div class="weui_cell_ft c_666 tc">876.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>三者险不计免赔</p>
+							</div>
+							<div class="weui_cell_ft c_04b" >投保</div>
+							<div class="weui_cell_ft c_666">123.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>玻璃险</p>
+							</div>
+							<div class="weui_cell_ft c_04b" >投保</div>
+							<div class="weui_cell_ft c_666">123.98</div>
+							
+						</div>
+						
+					</div>
+					<div class="tr" style="padding: 1rem;">
+						<span class="c_fff bg_ff7" style="border-radius: 5px; padding: .3rem;">加油卡,价值1000元</span>
+					</div>
+					
+					
+				</div>
+				<!--<div class="tc nextBtn" style="position: fixed;left: 50%;" >
+					<i class="iconfont icon-close c_fff f1m " style="font-size: 1.5rem;" ></i>
+				</div>-->
+			</div>
+			
+			
+			<!--<div class="tc ">
+				<a href="upload_data.html" class="weui_btn  weui_btn_primary" style="width: 60%;">下一步</a>
+			</div>-->
+			<div class="tc nextBtn" style="margin-bottom: 90px;" >
+						<i class="iconfont icon-close c_fff f1m " style="font-size: 1.5rem;" ></i>
+					</div>
+			<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 10000000;height: 50px;">
+				<div class="weui_tab_bd nextBtn">
+					
+				</div>
+				<div class="weui_tabbar">
+					
+					<a href="upload_data.html" id="rec_btn" class="weui_btn  weui_btn_primary" style="width: 100%;padding: 5px;">下一步</a>
+				</div>
+			</footer>
+		</div>
+		<!--公司详情-->
+		<div class="container bd">
+			<!--价格详情-->
+			<!--<ul class="price_box ">
+				<li class="company_info  pr">
+					<header class="clearfix">
+						<img class="fl" src="../../images/pingan.jpg" width="40px" alt="logo" />
+						<h5 class="fl company_name">太平洋</h5>
+						<p class="fr price c_666">￥<span class="f18 c_ff7">1255</span>元</p>
+					</header>
+					<p class="clearfix">
+						<span class="c_fff bg_ff7 youhui dinline fr">送话费</span>
+					</p>
+					
+					<p class="f16 info c_666">
+						2016年8月1日 14:00-2016年8月31日 24:00，期间，通过“优汇保”成功出单的用户，可获得1000元中国石油加油卡（全国中石油加油站可使用）。备注：加油卡在出单后，15个工作日快递到您的联系地址。
+					</p>
+					<div class="clearfix" style="padding: 0.5rem; border-top: 1px solid #ccc;margin-top: 10px;">
+						<span class="c_04b pocity_info fr">查看保单详情>></span>
+						
+					</div>
+				</li>
+				<li class="company_info pr">
+					<header class="clearfix">
+						<img class="fl" src="../../images/zhuanye.png" width="40px" alt="logo" />
+						<h5 class="fl company_name">太平洋</h5>
+						<p class="fr price c_666">￥<span class="f18 c_ff7">1255</span>元</p>
+					</header>
+					<p class="clearfix">
+						<span class="c_fff bg_ff7 youhui dinline fr">送1000元加油卡</span>
+					</p>
+					<p class="f16 info c_666">
+						2016年8月1日 14:00-2016年8月31日 24:00，期间，通过“优汇保”成功出单的用户，可获得1000元中国石油加油卡（全国中石油加油站可使用）。备注：加油卡在出单后，15个工作日快递到您的联系地址。
+					</p>
+					<div class="clearfix" style="padding: 0.5rem; border-top: 1px solid #ccc;margin-top: 10px;">
+						<span class="c_04b pocity_info fr">查看保单详情>></span>
+						
+					</div>
+				</li>
+			</ul>-->
+		</div>
+		<!--进度条-->
+		<div>
+			<div id="taiping" class="_barBox">
+				<ul class="price_box ">
+					<li class="company_info  pr">
+						<header class="clearfix">
+							<img class="fl" src="../../images/pingan.jpg" width="40px" alt="logo" />
+							<h5 class="fl company_name">太平洋</h5>
+							<p class="fr price c_666">￥<span class="f18 c_ff7">1255</span>元</p>
+						</header>
+						<p class="clearfix">
+							<span class="c_fff bg_ff7 youhui dinline fr">送话费</span>
+						</p>
+						
+						<p class="f16 info c_666">
+							2016年8月1日 14:00-2016年8月31日 24:00，期间，通过“优汇保”成功出单的用户，可获得1000元中国石油加油卡（全国中石油加油站可使用）。备注：加油卡在出单后，15个工作日快递到您的联系地址。
+						</p>
+						<div class="clearfix" style="padding: 0.5rem; border-top: 1px solid #ccc;margin-top: 10px;">
+							<span class="c_04b pocity_info fr">查看保单详情>></span>
+							
+						</div>
+					</li>
+					
+				</ul>
+				<!--<div class='bar mint active' data-percent='100' data-skill='太平洋保险'></div>-->
+			</div>
+			<div id="pingan" class="_barBox">
+				<div class='bar mint active' data-percent='100' data-skill='平安车险'></div>
+			</div>
+			<div id="pingan" class="_barBox">
+				<div class='bar mint active' data-percent='100' data-skill='人保'></div>
+			</div>
+			<div id="pingan" class="_barBox">
+				<div class='bar mint active' data-percent='100' data-skill='锦泰保险'></div>
+			</div>
+			<div id="pingan" class="_barBox">
+				<div class='bar mint active' data-percent='100' data-skill='平安车险'></div>
+			</div>
+		</div>
+		 
+		
+		
+		
+		<div class="tc clearfix" style="margin: 20px auto 50px auto;">
+			<a href="choosecompany.html" class="weui_btn weui_btn_plain_primary fl f14" style="width: 42%;margin-top: 15px;margin-left: 6%;">重选保险公司</a>
+			<a href="chooseplan.html" class="weui_btn weui_btn_plain_primary fl f14" style="width: 42%;margin-left: 6%;">修改保险方案</a>
+		</div>
+		<!--<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 999;height: 50px;">
+			
+			<div class="weui_tabbar">
+				<a href="javascript:void(0)" class="weui_btn  weui_btn_primary byBtn" style="width: 100%;padding: 5px;">投保</a>
+			</div>
+		</footer>-->
+		
+		
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script src="../../js/lib/prefixfree.min.js"></script>
+	<script>
+		$(function(){
+			//默然选择
+			$(".icon-gou1").eq(0).css("display","block");
+			/*立即投保*/
+			$(".pocity_info").tap(function(){
+				setTimeout(function(){
+					$(".cover").show();
+					$(".scrollBox").show();
+				},400)
+				
+				
+			});
+			/*关闭投保详情*/
+			$(".nextBtn").tap(function(){
+				setTimeout(function(){
+				$(".scrollBox").hide();
+				$(".cover").hide();
+				},400)
+			});
+			/*选择公司*/
+//			$(".company_info").tap(function(){
+//				var item = $(this);
+//				item.addClass("active");
+//				item.find(".icon-gou1").css("display","block");
+//				item.siblings().removeClass("active");
+//				item.siblings().find(".icon-gou1").css("display","none");
+//			})
+			
+		})
+	</script>
+</html>

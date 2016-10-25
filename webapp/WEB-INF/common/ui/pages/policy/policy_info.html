@@ -1,0 +1,185 @@
+<!--
+   settime:2016.8.18
+   author:chenying
+   describe:保单详情
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>保单详情</title>
+		<link rel="stylesheet" type="text/css" href="../../../weui/dist/style/weui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			header div{
+				width: 100%;
+			}
+			header{
+				padding: 1rem;
+				background: #fff;
+				/*background: #F8F8F8;*/
+			}
+			.jiaoqiang{
+				padding:.8rem 1rem;
+			}
+			.busi_policy>h4{
+				padding:.8rem 1rem;
+			}
+			.userName,.money{
+				margin-top: 3px;
+				margin-left: 3%;
+			}
+			.tel,.addr{
+				margin-top: 10px;
+				padding: 1rem;
+			}
+			
+			.container>div{
+				margin-top: 10px;
+			}
+			.notice{
+				margin-right: 15px;
+				color: #04BE02;
+				border: 1px solid #04BE02;
+				font-size: 12px;
+				padding: .3rem;
+				border-radius: 2px;
+			}
+			
+			/*新增*/
+			
+			.info_title{
+				
+				background: #fff;
+			}
+			.info_title>div{
+				display: inline-block;
+				width: 33.3%;
+				padding: .3rem 0;
+				
+			}
+			.bus_info>div{
+				width: 33.3%;
+				/*text-align: center;*/
+			}
+			.weui_cell_primary{
+				font-size: 12px;
+			}
+			.weui_cells{
+				margin: 0 auto; width: 98%;border-radius: 10px;
+			}
+			.weui_cells:before,.weui_cells:after{
+				border: none;
+			}
+		</style>
+	</head>
+	<body id="bodybox">
+		
+		<div class="container bd " >
+			
+			<div class="coverBox bd nextBtn"  style="margin-top: 0;">
+				<p class="f14" style="padding: 0.5rem 1rem;">订单号：<span class="c_999">131121213113212132132121321</span></p>
+				<header class="clearfix tl pr">
+					<!--<i class="iconfont icon-close c_666 f1m pa" style="top: -20px;right:0;font-size: 1.4rem;"></i>-->
+					<div class="clearfix  fl" style="width: 60%;">
+						<img class="fl" src="../../images/PAZYCX.png" width="40px" alt="logo" />
+						<span class="tc fl userName c_666">太平洋保险</span>
+					</div>
+					<p class="fr money">
+						<span>￥</span><span class="f17 c_ff7">123.55</span><span>元</span>
+					</p>
+				</header>
+				<!--交强险-->
+				<div >
+					<div class="clearfix"  style="padding: .3rem 1rem;margin-top: 0px;background: #f8f8f8;">
+						<h4 class="fl c_666">强制险</h4>
+						<span class="fr  f14" style="padding: .1rem .5rem;border-radius: 5px;">小计￥1015元</span>
+					</div>
+					<div class="weui_cells " style="">
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>交强险</p>
+							</div>
+							<div class="weui_cell_ft c_666 f12">655.0</div>
+						</div>
+						<div class="weui_cell">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>车船税</p>
+							</div>
+							
+							<div class="weui_cell_ft f12 c_666">360.0</div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<!--商业险-->
+				<div class="busi_policy" style="margin-bottom: 10px;">
+					<div class="clearfix" style="padding: .3rem 1rem;">
+						<h4 class="fl c_666">商业险</h4>
+						<span class="fr  f14" style="padding: .1rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
+					</div>
+					
+					<div class="weui_cells" style="margin: 0 auto; width: 98%;border-radius: 10px;" >
+						<div class="info_title weui_cell clearfix">
+							<div class="tl fl c_666 f14">险种</div>
+							<div class="tc fl c_666 f14">保额</div>
+							<div class="tc fl c_666 f14">保费</div>
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd tl weui_cell_primary">
+								<p>机动车损失险</p>
+							</div>
+							<div class="weui_cell_ft tc c_04b f12" >100万</div>
+							<div class="weui_cell_ft tc c_666 f12">876.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd tl weui_cell_primary">
+								<p>三者险不计免赔</p>
+							</div>
+							<div class="weui_cell_ft tc c_04b f12" >投保</div>
+							<div class="weui_cell_ft tc c_666 f12">123.98</div>
+							
+						</div>
+						<div class="weui_cell bus_info">
+							<div class="weui_cell_bd tl weui_cell_primary">
+								<p>玻璃险</p>
+							</div>
+							<div class="weui_cell_ft tc c_04b f12" >投保</div>
+							<div class="weui_cell_ft tc c_666 f12">123.98</div>
+							
+						</div>
+						
+					</div>
+					<div class="tr" style="padding: 1rem;background: #f8f8f8;">
+						<span class="c_fff bg_ff7" style="border-radius: 5px; padding: .3rem;">加油卡,价值1000元</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<header class="clearfix" style="padding: .5rem 1rem;">
+			<p class="c_666 f14">强制险生效时间：<span class="c_999">2015-10-23</span></p>
+			<p class="c_666 f14">商业险生效时间：<span class="c_999">2015-10-23</span></p>
+		</header>
+		
+		<div class="tel bg_f">
+			<label >联系电话</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c_666">13329898912</span>
+		</div>
+		<div class="addr bg_f" style="margin-bottom: 60px;">
+			<h5>张先生</h5>
+			<p class="c_666">四川省成都市金牛北站东二段112号</p>
+		</div>
+		<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 999;height: 80px;">
+			
+			<div class="weui_tabbar">
+				<a href="javascipt:void(0)" class="weui_btn  weui_btn_primary" style="width: 100%;padding: 5px;">去支付</a>
+			</div>
+		</footer>
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+</html>

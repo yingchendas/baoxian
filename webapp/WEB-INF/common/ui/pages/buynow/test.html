@@ -1,0 +1,194 @@
+<!--
+	测试页面
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+		<title>测试页面</title>
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			.cover{
+				height: 100%;
+			    width: 100%;
+			    position: fixed;
+			    left: 0;
+			    right: 0;
+			    top: 0;
+			    bottom: 0;
+			    background: rgba(0, 0, 0, 0.2);
+			    overflow: hidden;
+			    z-index: 1000000;
+			   /*display: none;*/
+				
+				 
+			}
+			.scrollBox{
+				height:400px;
+			    width: 90%;
+			    position: fixed;
+			    left: 5%;
+			    right: 0;
+			    bottom: 95px;
+			    background: rgba(0, 0, 0, 0.2);
+			    overflow-y: scroll;
+			    z-index: 1000001;
+			    border-radius: 5px;
+			    /*display: none;*/
+				
+			}
+			.scrollBox::-webkit-scrollbar{width:5px; height:5px;}
+			.scrollBox::-webkit-scrollbar-button{width:0;height:0;}
+			.scrollBox::-webkit-scrollbar-corner{display:block; }
+			.scrollBox::-webkit-scrollbar-thumb{background-clip:padding-box;background-color:rgba(233,55,145,.8);border-radius:8px;}//还可以设置滚动条的颜色
+			.scrollBox::-webkit-scrollbar-thumb:hover{background-clip:padding-box;background-color:rgba(0,0,0,.5);border-radius:8px;}
+			.weui_cells{
+				margin-top: 0;
+				
+			}
+			.cancel{
+				position: fixed;
+				bottom: 25px;
+				width:90%;
+				left: 5%;
+				border-radius: 10px;
+				z-index: 1000002;
+				background: #f8f8f8;
+				font-size: 17px;
+				color: #666;
+				padding: 11px 0;
+			}
+		</style>
+	</head>
+	<body id="bodybox">
+		<div class="cover nextBtn pf">
+			<div>
+				<span>是否为运营车辆：</span>
+				<span class="_shi"><i class="iconfont icon-iconfontkuangcopy f12" style="display: inline-block;margin-right:5px ;color: #fff;"></i>是</span>
+				<span class="_fou"><i class="iconfont icon-gou2 f15" style="display: inline-block;margin-right:5px ;color: #04BE02;margin-top: 5px;"></i>否</span>
+			</div>
+		</div>
+		<div class="scrollBox ">
+			<div class="coverBox bd bg_f ">
+				<div class="weui_cells weui_cells_access">
+			        <a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd  weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市金牛区红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+					<a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd  weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+					<a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd  weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+					<a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd  weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+					<a class="weui_cell" href="javascript::void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			        <a class="weui_cell" href="javascript:void(0);">
+			            <div class="weui_cell_bd weui_cell_primary">
+			                <p><span class="userName">陈影</span><span class="addr">四川省成都市红花东路3号</span></p>
+			            </div>
+			            
+			        </a>
+			    </div>
+			    
+			</div>
+			
+		</div>
+		<div class="tc c_04b cancel" >
+				取消	
+		</div>
+		<script src="../../js/lib/jquery-1.7.min.js"></script>
+		<script>
+			$(function(){
+				$(".weui_cell_bd").on("click",function(){
+					var item = $(this);
+					var userName = item.find(".userName").text();
+					var addr = item.find(".addr").text();
+					alert(userName);
+					alert(addr);
+				})
+			})
+		</script>
+	</body>
+</html>

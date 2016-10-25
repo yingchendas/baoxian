@@ -1,0 +1,58 @@
+<!--
+   settime:2016.8.17
+   author:chenying
+   describe:车辆管理
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>车辆管理</title>
+		<link rel="stylesheet" href="../../../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/common/common.css"/>
+		<style type="text/css">
+			body{
+				background: #F8F8F8;
+			}
+			.car_info{
+				padding: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bd">
+			<div class="weui_cells">
+				<div class="weui_cell car_info">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>川A12345</p>
+					</div>
+					<a href="carinfo.html"  class="c_ff7">
+						编辑
+					</a>
+					<div class="weui_cell_ft c_666 delBtn" style="margin-left: 10px;">删除</div>
+				</div>
+				<div class="weui_cell car_info">
+					<div class="weui_cell_bd weui_cell_primary">
+						<p>川A12345</p>
+					</div>
+					<a href="carinfo.html" class="c_ff7">
+						编辑
+					</a>
+					<div class="weui_cell_ft c_666 delBtn" style="margin-left: 10px;">删除</div>
+				</div>
+			</div>
+		</div>
+		<footer class="weui_tab" style="position: fixed;bottom: 0;width: 100%;z-index: 999;height: 50px;">
+			<div class="weui_tab_bd">
+
+			</div>
+			<div class="weui_tabbar">
+				<a href="carinfo.html" class="weui_btn  weui_btn_primary" style="width: 100%;padding: 5px;">添加车辆</a>
+			</div>
+		</footer>
+	</body>
+	<script type="text/javascript" src="../../../zepto/zepto.min.js"></script>
+	<script type="text/javascript" src="../../js/touch.js"></script>
+	<script type="text/javascript" src="../../js/carmanager/carmanager.js"></script>
+</html>
